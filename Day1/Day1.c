@@ -2,8 +2,13 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+/**
+ * @brief The main function opens the input file and prints out the solutions for both parts of the Day 1 puzzle.
+ * 
+ * @return int status code
+ */
 int main(void) {
-    // open file and initialize variables used to solve both parts of the problem
+    // open file and initialize variables used to solve the puzzle
     FILE *file = fopen("Day1-Input.txt", "r");
     int floor = 0;
     char chr = fgetc(file);
