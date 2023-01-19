@@ -5,6 +5,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <math.h>
+
+/**
+ * @brief The min function finds and returns the minimum value of three integers.
+ * 
+ * @param x first integer to compare
+ * @param y second integer to compare
+ * @param z third integer to compare
+ * @return int minimum of the inputs
+ */
+int min(int x, int y, int z) {
+    return (x > y) ? (y > z) ? z : y : (x > z) ? z : x;
+}
 
 /**
  * @brief The main function opens the input file and prints out the solutions for both parts of the Day 2 puzzle.
@@ -12,9 +25,6 @@
  * @return int status code
  */
 int main(void) {
-    // header for min function
-    int min(int, int, int);
-
     // open file and initialize variables used for solving the puzzle
     FILE *file = fopen("Day2-Input.txt", "r");
     char line[10];
@@ -40,16 +50,4 @@ int main(void) {
     printf("Part 2 Solution: %i\n", total_length);
 
     return 0;
-}
-
-/**
- * @brief The min function finds and returns the minimum value of three integers.
- * 
- * @param x first integer to compare
- * @param y second integer to compare
- * @param z third integer to compare
- * @return int minimum of the inputs
- */
-int min(int x, int y, int z) {
-    return (x > y) ? (y > z) ? z : y : (x > z) ? z : x;
 }
