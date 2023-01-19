@@ -29,4 +29,6 @@ int main(void) {
     // print out solutions to both parts
     printf("Part 1 Solution: %i\n", floor);
     printf("Part 2 Solution: %i\n", position);
+
+    return 0;
 }
