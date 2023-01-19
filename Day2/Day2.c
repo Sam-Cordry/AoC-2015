@@ -1,3 +1,7 @@
+// file: Day2.c
+// author: Sam Cordry
+// solves the puzzles from Day 2
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -15,8 +19,8 @@ int main(void) {
     FILE *file = fopen("Day2-Input.txt", "r");
     char line[10];
     int x, y, z;
-    int totalArea = 0;
-    int totalLength = 0;
+    int total_area = 0;
+    int total_length = 0;
 
     // iterate over every line in the input file
     while(!feof(file)) {
@@ -25,15 +29,15 @@ int main(void) {
         sscanf(line, "%ix%ix%i", &x, &y, &z);
 
         // add to the total area the surface area of the box and the area of the smallest side
-        totalArea += 2 * (x * y + y * z + x * z) + min(x * y, y * z, x * z);
+        total_area += 2 * (x * y + y * z + x * z) + min(x * y, y * z, x * z);
 
         // add to the total length the smallest peremeter of any face and volume of the box
-        totalLength += min(2 * (x + y), 2 * (y + z), 2 * (x + z)) + x * y * z;
+        total_length += min(2 * (x + y), 2 * (y + z), 2 * (x + z)) + x * y * z;
     }
     
     // print out the solutions to both parts of the puzzle
-    printf("Part 1 Solution: %i\n", totalArea);
-    printf("Part 2 Solution: %i\n", totalLength);
+    printf("Part 1 Solution: %i\n", total_area);
+    printf("Part 2 Solution: %i\n", total_length);
 
     return 0;
 }

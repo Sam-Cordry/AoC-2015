@@ -1,3 +1,7 @@
+// file: Day1.c
+// author: Sam Cordry
+// solves the puzzles from Day 1
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -13,7 +17,7 @@ int main(void) {
     int floor = 0;
     char chr = fgetc(file);
     int position = 0;
-    bool hasSetPosition = false;
+    bool has_set_position = false;
 
     // iterate through characters in the file
     for(int i = 1; !feof(file); i++) {
@@ -21,10 +25,10 @@ int main(void) {
         floor += (chr == '(') ? 1 : -1;
 
         // check if this is the first time that -1 is the current floor
-        if(floor == -1 && !hasSetPosition) {
+        if(floor == -1 && !has_set_position) {
             // store current position in file (counting from 1) and mark that -1 has been found
             position = i;
-            hasSetPosition = true;
+            has_set_position = true;
         }
 
         // get next character and increment 
